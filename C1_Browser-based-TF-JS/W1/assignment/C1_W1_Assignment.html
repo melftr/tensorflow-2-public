@@ -26,11 +26,9 @@
             const convertedTrainingData = trainingData.map(
                 ({xs,ys})=>{
                     return {xs: Object.values(xs), ys:Object.values(ys)};
-                }
-                    
-            ).batch(10);
+                }).batch(10);
                   
-            const testingUrl = '/data/wdbc-test.csv';
+            const testingUrl = 'wdbc-test.csv';
             
             // Take a look at the 'wdbc-test.csv' file and specify the column
             // that should be treated as the label in the space below..
