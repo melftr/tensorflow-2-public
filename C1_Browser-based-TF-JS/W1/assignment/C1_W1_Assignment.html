@@ -59,7 +59,7 @@
             // Specify the number of features in the space below.
             // HINT: You can get the number of features from the number of columns
             // and the number of labels in the training data. 
-            //const numOfFeatures = // YOUR CODE HERE
+            const numOfFeatures = (await trainingData.columnNames()).length-1;
             
                 
             // In the space below create a neural network that predicts 1 if the diagnosis is malignant
@@ -71,7 +71,7 @@
             // using ReLu activation functions where applicable. For this dataset only a few
             // hidden layers should be enough to get a high accuracy.  
             const model = tf.sequential();
-            model.add(tf.layers.dense({inputShape: [numOfFeatures],units: 32, activation: "relu"}));
+            model.add(tf.layers.dense({inputShape: [numOfFeatures],units: 10, activation: "relu"}));
             model.add(tf.layers.dense({units: 1, activation: "sigmoid"}));
             
             // Compile the model using the binaryCrossentropy loss, 
