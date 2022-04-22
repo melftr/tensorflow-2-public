@@ -47,12 +47,10 @@
             // Therefore, there is no need to convert string labels into
             // a one-hot encoded array of label values like we did in the
             // Iris dataset example. 
-            const convertedTestingData = trainingData.map(
+            const convertedTestingData = testingData.map(
                 ({xs,ys})=>{
                     return {xs: Object.values(xs), ys:Object.values(ys)};
-                }
-                    
-            ).batch(10);
+                }).batch(10);
 
             // Specify the number of features in the space below.
             // HINT: You can get the number of features from the number of columns
